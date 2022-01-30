@@ -34,7 +34,7 @@ try:
                     print(MATRICK[i][j])
                     while GPIO.input(ROW[i]) == 0:
                         pass
-                GPIO.output(ROW[i], 0)
+                GPIO.output(COL[i], 1)
 
 
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
