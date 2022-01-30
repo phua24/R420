@@ -34,7 +34,7 @@ try:
             for i in range(4):
                 if GPIO.input(ROW[i]) == 0:
                     print(MATRICK[i][j])
-                    time.sleep(1)
+                    time.sleep(5)
                     while GPIO.input(ROW[i]) == 0:
                         pass
                 GPIO.output(COL[i], 1)
