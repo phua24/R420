@@ -18,7 +18,7 @@ ROW = [7, 11, 13, 15]
 COL = [12, 16, 18, 22]
 
 for j in range(4):
-    GPIO.setmode(COL[j], GPIO.OUT)
+    GPIO.setup(COL[j], GPIO.OUT)
     GPIO.output(COL[j], i)
 
 for i in range(4):
