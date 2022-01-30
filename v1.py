@@ -24,7 +24,7 @@ for j in range(4):
     GPIO.output(COL[j], 1)
 
 for i in range(4):
-    GPIO.setup(ROW[i], GPIO.IN)
+    GPIO.setup(ROW[i], GPIO.OUT)
 
 try:
     while True:
@@ -33,8 +33,6 @@ try:
 
             for i in range(4):
                 if GPIO.input(ROW[i]) == 0:
-                    print("column:", COL[j])
-                    print("Row:", ROW[i])
                     print(MATRICK[i][j])
                     time.sleep(1)
                     while GPIO.input(ROW[i]) == 0:
