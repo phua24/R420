@@ -19,7 +19,7 @@ COL = [12, 16, 18, 22]
 
 for j in range(4):
     GPIO.setup(COL[j], GPIO.OUT)
-    GPIO.output(COL[j], i)
+    GPIO.output(COL[j], 1)
 
 for i in range(4):
     GPIO.setup(ROW[i], GPIO.IN, pull_up_down - GPIO.PUD_UP)
