@@ -10,6 +10,6 @@ import Keypad  # import module Keypad
 
 
 try:
-    pass
+    print("test")
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
     GPIO.cleanup()
