@@ -33,8 +33,8 @@ try:
 
             for i in range(4):
                 if GPIO.input(ROW[i]) == 0:
-                    print("column:"+COL[j])
-                    print("Row:"+ROW[i])
+                    print("column:", COL[j])
+                    print("Row:", ROW[i])
                     print(MATRICK[i][j])
                     time.sleep(1)
                     while GPIO.input(ROW[i]) == 0:
