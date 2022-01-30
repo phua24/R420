@@ -6,10 +6,38 @@
 # modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
-import Keypad  # import module Keypad
+GPIO.setmode (GPIO.BOARD)
+
+MATRICK = [ [1,2,3,'A'],
+            [4,5,6,'B'],
+            [7,8,9,'C'],
+            ['*',0,'#','D'] ]
+
+ROW = [7,11,13,15]
+COL = [12,16,18,22]
+
+for j in range(4):
+    GPIO.setmode(COL[j],GPIO.OUT)
+    GPIO.output(COL[j], i)
+
+for i in range(4):
+    GPIO.setmode(ROW[i],GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 
 try:
-    print("test")
+    while (True):
+        for j in range(4):
+            GPIO.output(COL[j],0)
+
+            for i in range (4):
+                if GPIO.input (ROW[i]) == 0:
+                    print MATRICK[i][j]
+                    while GPIO.input(ROW[i]) == 0:
+                        pass
+                GPIO.output(ROW[i],0)
+
+
+
+
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
     GPIO.cleanup()
