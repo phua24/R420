@@ -22,7 +22,7 @@ for j in range(4):
     GPIO.output(COL[j], i)
 
 for i in range(4):
-    GPIO.setmode(ROW[i], GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setmode(ROW[i], GPIO.IN)
 
 try:
     while True:
