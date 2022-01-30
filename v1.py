@@ -9,5 +9,7 @@ import RPi.GPIO as GPIO
 import Keypad  # import module Keypad
 
 
-print("Program is starting ... ")
-
+try:
+    pass
+except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
+    GPIO.cleanup()
