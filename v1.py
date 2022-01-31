@@ -20,9 +20,9 @@ try:
     GPIO.output(7, GPIO.LOW)
     print("First Relay is ON")
     time.sleep(5)
-    #GPIO.output(11, GPIO.LOW)
-    #print("Second Relay is ON")
-    #time.sleep(5)
+    GPIO.output(11, GPIO.LOW)
+    print("Second Relay is ON")
+    time.sleep(5)
     GPIO.cleanup()
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
     GPIO.cleanup()
