@@ -6,39 +6,37 @@
 # modification: 2018/08/03
 ########################################################################
 import time
-
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 
-MATRICK = [[1, 2, 3, 'A'],
-           [4, 5, 6, 'B'],
-           [7, 8, 9, 'C'],
-           ['*', 0, '#', 'D']]
+GPIO.setup(7, GPIO.OUT)
+GPIO.output(7, GPIO.HIGH)
 
-ROW = [7, 11, 13, 15]
-COL = [12, 16, 18, 22]
+GPIO.setup(11, GPIO.OUT)
+GPIO.output(11, GPIO.HIGH)
 
-for j in range(4):
-    GPIO.setup(COL[j], GPIO.OUT)
-    GPIO.output(COL[j], 1)
+GPIO.setup(13, GPIO.OUT)
+GPIO.output(13, GPIO.HIGH)
 
-for i in range(4):
-    GPIO.setup(ROW[i], GPIO.IN)
+GPIO.setup(15, GPIO.OUT)
+GPIO.output(15, GPIO.HIGH)
+
 
 try:
-    while True:
-        for j in range(4):
-            GPIO.output(COL[j], 0)
-
-            for i in range(4):
-                if GPIO.input(ROW[i]) == 0:
-                    print(MATRICK[i][j])
-                    time.sleep(5)
-                    while GPIO.input(ROW[i]) == 0:
-                        pass
-                GPIO.output(COL[i], 1)
-
-
+    GPIO.output(7, GPIO.LOW)
+    print("First Relay is ON")
+    time.sleep(2)
+    GPIO.output(11, GPIO.LOW)
+    print("Second Relay is ON")
+    time.sleep(2)
+    GPIO.output(13, GPIO.LOW)
+    print("Third Relay is ON")
+    time.sleep(2)
+    GPIO.output(15, GPIO.LOW)
+    print("Forth Relay is ON")
+    time.sleep(2)
+    print("all working!")
+    GPIO.cleanup()
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
     GPIO.cleanup()
