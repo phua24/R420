@@ -16,27 +16,13 @@ GPIO.output(7, GPIO.HIGH)
 GPIO.setup(11, GPIO.OUT)
 GPIO.output(11, GPIO.HIGH)
 
-GPIO.setup(13, GPIO.OUT)
-GPIO.output(13, GPIO.HIGH)
-
-GPIO.setup(15, GPIO.OUT)
-GPIO.output(15, GPIO.HIGH)
-
-
 try:
     GPIO.output(7, GPIO.LOW)
     print("First Relay is ON")
-    time.sleep(2)
-    GPIO.output(11, GPIO.LOW)
-    print("Second Relay is ON")
-    time.sleep(2)
-    GPIO.output(13, GPIO.LOW)
-    print("Third Relay is ON")
-    time.sleep(2)
-    GPIO.output(15, GPIO.LOW)
-    print("Forth Relay is ON")
-    time.sleep(2)
-    print("all working!")
+    time.sleep(5)
+    #GPIO.output(11, GPIO.LOW)
+    #print("Second Relay is ON")
+    #time.sleep(5)
     GPIO.cleanup()
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
     GPIO.cleanup()
