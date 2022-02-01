@@ -17,7 +17,7 @@ GPIO.setup(11, GPIO.OUT)
 GPIO.output(11, GPIO.HIGH)
 
 try:
-    GPIO.output(11, GPIO.LOW)
+    GPIO.output(7, GPIO.LOW)
     print("First Relay is ON")
 
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, exit the program.
